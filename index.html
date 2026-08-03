@@ -25,19 +25,24 @@
                 </a>
 
                 </div>
-                <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#exhibitions">Exhibitions</a></li>
-                    <li><a href="#art">Art</a></li>
+                <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links" id="primary-navigation">
+                    <li><a href="index.html" aria-current="page">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="exhibitions.html">Exhibitions</a></li>
+                    <li><a href="art.html">Art</a></li>
                 </ul>
             </div>
         </nav>
 
         <!-- Header overlay on hero -->
         <header role="banner">
-            <h1>Georgina Fuller</h1>
-            <p>London-based ceramics and glass artist</p>
+            <h1>Georgina<br>Fuller</h1>
+            <h2>London-based ceramics and glass artist</h2>
         </header>
     </div>
 
@@ -45,7 +50,7 @@
     <section class="spacer-section">
         <article>
             <p>
-                Georgina Fuller is a contemporary ceramics and glass artist working at the intersection of traditional craft techniques and modern sculptural practice. Her work explores the translucency and opacity of materials, investigating how light interacts with form to create immersive spatial experiences.
+                Georgina Fuller works across two materials pulling in different directions — ceramic forms that reference coral and reef structures, bearing the bleach and damage of a warming ocean, and cast glass architecture: staircases, arches, and monuments rendered in colour and light. One body of work looks back at what's being lost. The other builds something new to stand in its place
             </p>
         </article>
     </section>
@@ -57,7 +62,7 @@
             <img src="https://siennafuller.github.io/Images/glass.jpg" alt="Glass">
             <div class="material-banner-content">
                 
-                <a href="#glass" class="cta">Glass</a>
+                <a href="art.html?category=glass" class="cta">Glass</a>
             </div>
         </div>
 
@@ -66,7 +71,7 @@
             <img src="Images/Ceramic.jpg" alt="Ceramics">
             <div class="material-banner-content">
                
-                <a href="#ceramics" class="cta">Ceramics</a>
+                <a href="art.html?category=ceramics" class="cta">Ceramics</a>
             </div>
         </div>
 
@@ -75,7 +80,7 @@
             <img src="Images/collage.jpg" alt="Collage">
             <div class="material-banner-content">
                 
-                <a href="#collage" class="cta">Collage</a>
+                <a href="art.html?category=collage" class="cta">Collage</a>
             </div>
         </div>
     </section>
@@ -85,11 +90,11 @@
         <div class="gap-section-wrapper">
             <div class="gap-section-image">
                 <!-- H5 Image placeholder - replace with actual image -->
-                <img src="Images/Georgie.jpg" alt="H5 Image">
+                
                 <!-- White text box overlaying top 20% of image -->
                 <div class="gap-section-text">
                     <p>
-                        Her studio practice combines hand-building, wheel-throwing, and casting techniques with experimental glasswork. Each piece is carefully considered within the context of its intended space.
+                        Georgina trained at Central Saint Martins and the Royal College of Art, and now works from her studio in London. Her ceramic practice returns to a lifelong connection with the ocean, tracking the transition from healthy reef to bleached, fragile structure. Her glass work moves in a different direction — architectural, geometric, cast in translucent colour.
                     </p>
                 </div>
             </div>
@@ -106,5 +111,17 @@
             </ul>
         </nav>
     </footer>
+
+    <script>
+        (function () {
+            var nav = document.querySelector('nav[role="navigation"]');
+            var toggle = document.querySelector('.nav-toggle');
+            if (!nav || !toggle) return;
+            toggle.addEventListener('click', function () {
+                var isOpen = nav.classList.toggle('nav-open');
+                toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            });
+        })();
+    </script>
 </body>
 </html>

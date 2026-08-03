@@ -28,12 +28,10 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: #D4A574;
-            background-size: cover;
-            background-position: top left;
             z-index: 1;
             background-image: url('https://siennafuller.github.io/Images/H1.jpg') ;
             background-repeat: no-repeat;
+           
             background-size: cover;
             background-position: top left;
         }
@@ -66,8 +64,8 @@
         }
 
         .logo svg {
-            width: 100%;
-            height: 100%;
+            width: 80%;
+            height: 80%;
         }
 
         .nav-links {
@@ -92,17 +90,40 @@
             color: #D4A574;
         }
 
+        .nav-links a[aria-current="page"] {
+            color: #888B84;
+        }
+
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            gap: 5px;
+            width: 28px;
+            height: 22px;
+            background: none;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            z-index: 11;
+        }
+
+        .nav-toggle span {
+            display: block;
+            width: 100%;
+            height: 3px;
+            background-color: #888B84;
+            border-radius: 2px;
+        }
+
         /* Header - Centered on hero */
         header[role="banner"] {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 12%;
+            left: 250px;
+            max-width: 40%;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
             z-index: 5;
         }
 
@@ -111,15 +132,534 @@
             font-size: 64px;
             font-weight: 400;
             color: #71746D;
+            line-height: 1.1;
+            text-align: left;
             margin-bottom: 20px;
         }
 
-        header[role="banner"] > p {
+        header[role="banner"] > h2 {
             font-family: 'Quicksand', sans-serif;
-            font-size: 16px;
+            font-size: 24px;
             font-weight: 400;
             color: #71746D;
             line-height: 140%;
+            text-align: left;
+        }
+
+        /* Static (non-hero) nav, used on pages without a full-bleed hero image */
+        nav[role="navigation"].static-nav {
+            position: relative;
+
+
+        
+        }
+
+        /* Exhibitions page — pixel-matched to Figma (1440px frame, 5854px tall) */
+        .exhibitions-page {
+            position: relative;
+            min-height: 660px;
+        }
+
+        .exhibitions-list {
+            position: absolute;
+            top: 195px;
+            left: 71.25%;
+            display: flex;
+            flex-direction: column;
+            gap: 43px;
+        }
+
+        .exhibitions-upcoming {
+            position: absolute;
+            top: -60px;
+            left: 0;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 400;
+            font-size: 24px;
+            color: #000000;
+            white-space: nowrap;
+        }
+
+        .exhibition-item p {
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 400;
+            font-size: 24px;
+            color: #000000;
+            line-height: 1.4;
+            white-space: nowrap;
+            margin: 0;
+        }
+
+        .exhibitions-heading {
+            position: absolute;
+            top: 280px;
+            left: 178px;
+            font-family: 'Syncopate', sans-serif;
+            font-weight: 400;
+            font-size: 64px;
+            color: #A3A79C;
+            line-height: 1.4;
+            margin: 0;
+        }
+
+        /* Exhibition story sections — all three share the same structure
+           (one full-bleed background + two supporting images + title + text),
+           matching the "Arbors" story's layout exactly. */
+        .exhibition-story {
+            position: relative;
+            width: 1440px;
+            height: 1778px;
+            margin: 0 auto 80px;
+        }
+
+        .exhibitions-page > .exhibition-story:first-of-type {
+            margin-top: 660px;
+        }
+
+        .story-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 1440px;
+            height: 1778px;
+            object-fit: cover;
+        }
+
+        .story-thumb {
+            position: absolute;
+            border-radius: 20px;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        .story-thumb-1 {
+            top: 32px;
+            left: 955px;
+            width: 405px;
+            height: 374px;
+        }
+
+        .story-thumb-2 {
+            top: 433px;
+            left: 960px;
+            width: 400px;
+            height: 533px;
+        }
+
+        .story-title {
+            position: absolute;
+            top: 131px;
+            left: 189px;
+            width: 253px;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 1.4;
+            color: #000000;
+            margin: 0;
+            z-index: 1;
+        }
+
+        .story-text {
+            position: absolute;
+            top: 416px;
+            left: 192px;
+            width: 531px;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 300;
+            font-size: 16px;
+            line-height: 1.4;
+            color: #000000;
+            margin: 0;
+            z-index: 1;
+        }
+
+        /* About page */
+        .about-top {
+            position: relative;
+            padding: 40px;
+        }
+
+        nav[role="navigation"].side-nav {
+            position: relative;
+            z-index: 2;
+            width: auto;
+            padding: 0;
+        }
+
+        .about-hero {
+            position: absolute;
+            inset: 0;
+            margin: 8% 15% 0% 20%;
+            height: 573px;
+            z-index: 1;
+        }
+
+        .about-hero-image {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            border-radius: 50px;
+            overflow: hidden;
+        }
+
+        .about-hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .about-hero-label {
+            position: absolute;
+            left: 4.3%;
+            top: 40.6%;
+            width: 30.9%;
+            height: 12.6%;
+            min-width: 160px;
+            background-color: #D1D7D8;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Syncopate', sans-serif;
+            font-size: 48px;
+            font-weight: 400;
+            color: #A3A79C;
+            line-height: 1.4;
+        }
+
+        .about-bio {
+            max-width: 1285px;
+            margin: 0 auto;
+            padding: 16px 40px 60px;
+        }
+
+        .about-bio-text {
+            display: grid;
+            grid-template-columns: 440px 440px;
+            gap: 40px;
+            width: max-content;
+            margin: 0 auto;
+        }
+
+        .about-bio-col p {
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 300;
+            font-size: 16px;
+            line-height: 140%;
+            color: #000000;
+            margin-bottom: 20px;
+        }
+
+        .about-bio-col p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Sub-page Hero (e.g. Art page) */
+        .hero-wrapper.subhero {
+            height: 838px;
+        }
+
+        .subhero-background {
+            background-image: url('Images/art/hero.jpg');
+            background-position: center;
+        }
+
+        .subhero-header {
+            top: 33%;
+            left: 20%;
+            max-width: 60%;
+        }
+
+        /* Filter pills */
+        .art-filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 24px;
+            padding: 89px 40px 0;
+        }
+
+        .filter-pill {
+            font-family: 'Inter', sans-serif;
+            cursor: pointer;
+        }
+
+        .filter-pill.active {
+            background-color: #FFFFFF;
+            color: #A3A79C;
+            border: 1px solid #A3A79C;
+        }
+
+        /* Artwork grid */
+        .art-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            max-width: 1285px;
+            margin: 0 auto;
+            padding: 40px;
+        }
+
+        .art-grid-item {
+            border-radius: 20px;
+            overflow: hidden;
+            aspect-ratio: 401.67 / 370.5;
+        }
+
+        .art-grid-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Hover-triggered 3D turntable effect on Art grid item 2 */
+        .art-grid-item-sculpture {
+            position: relative;
+        }
+
+        .art-sculpture-static {
+            transition: opacity 0.3s ease;
+        }
+
+        .art-grid-item-sculpture:hover .art-sculpture-static {
+            opacity: 0;
+        }
+
+        .sculpture-turntable {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f7f6f4;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            perspective: 800px;
+            perspective-origin: 50% 42%;
+        }
+
+        .art-grid-item-sculpture:hover .sculpture-turntable {
+            opacity: 1;
+        }
+
+        .sculpture-shadow {
+            position: absolute;
+            left: 50%;
+            bottom: 6%;
+            width: 55%;
+            height: 6%;
+            background: radial-gradient(ellipse at center, rgba(30, 20, 10, 0.45) 0%, rgba(30, 20, 10, 0) 70%);
+            filter: blur(6px);
+            transform: translateX(-50%);
+        }
+
+        .sculpture-stage {
+            position: relative;
+            width: 74%;
+            height: 74%;
+            transform-style: preserve-3d;
+            animation: art-turntable 8s linear infinite;
+            animation-play-state: paused;
+        }
+
+        .art-grid-item-sculpture:hover .sculpture-stage {
+            animation-play-state: running;
+        }
+
+        .sculpture-stage img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            backface-visibility: visible;
+        }
+
+        @keyframes art-turntable {
+            from { transform: rotateY(0deg); }
+            to { transform: rotateY(360deg); }
+        }
+
+        /* Item description modal */
+        body.modal-open {
+            overflow: hidden;
+        }
+
+        body.modal-open > *:not(.art-modal-overlay) {
+            opacity: 0.25;
+            transition: opacity 0.3s ease;
+        }
+
+        .art-modal-overlay {
+            position: fixed;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(0, 0, 0, 0.35);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease;
+            z-index: 100;
+            padding: 40px;
+        }
+
+        .art-modal-overlay.is-open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .art-modal {
+            position: relative;
+            background-color: #FFFFFF;
+            border-radius: 50px;
+            max-width: 1140px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 87px 60px 100px;
+            display: flex;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+
+        .art-modal-close {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            background: none;
+            border: none;
+            font-size: 32px;
+            line-height: 1;
+            color: #71746D;
+            cursor: pointer;
+        }
+
+        .art-modal-images {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            flex: 1 1 400px;
+        }
+
+        .art-modal-image {
+            flex: 1;
+            border-radius: 20px;
+            overflow: hidden;
+            aspect-ratio: 301 / 387;
+            background-color: #F7F6F4;
+        }
+
+        .art-modal-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        .art-modal-text {
+            flex: 1 1 400px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .art-modal-text p {
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 300;
+            font-size: 16px;
+            line-height: 1.4;
+            color: #000000;
+            margin: 0 0 4px;
+        }
+
+        .art-modal-enquire {
+            align-self: flex-start;
+            margin-top: 30px;
+        }
+
+        /* Inquire form modal */
+        .art-enquire-modal {
+            align-items: flex-start;
+        }
+
+        .art-enquire-text {
+            flex: 1 1 400px;
+        }
+
+        .art-enquire-text h2 {
+            font-family: 'Syncopate', sans-serif;
+            font-weight: 400;
+            font-size: 48px;
+            color: #71746D;
+            margin: 0 0 30px;
+            line-height: 1.4;
+        }
+
+        .art-enquire-text p {
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 300;
+            font-size: 16px;
+            line-height: 1.4;
+            color: #000000;
+            margin: 0 0 4px;
+        }
+
+        .art-enquire-form {
+            flex: 1 1 400px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .art-enquire-row {
+            display: flex;
+            gap: 20px;
+        }
+
+        .art-enquire-field {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .art-enquire-field label {
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 300;
+            font-size: 16px;
+            color: #000000;
+        }
+
+        .art-enquire-field input,
+        .art-enquire-field textarea {
+            background-color: #C4D3D5;
+            border: none;
+            border-radius: 20px;
+            padding: 8px 20px;
+            font-family: 'Quicksand', sans-serif;
+            font-size: 16px;
+            color: #000000;
+        }
+
+        .art-enquire-field textarea {
+            resize: vertical;
+            min-height: 150px;
+            border-radius: 20px;
+        }
+
+        .art-enquire-field input:focus,
+        .art-enquire-field textarea:focus {
+            outline: 2px solid #A3A79C;
+            outline-offset: 2px;
+        }
+
+        .art-enquire-submit {
+            align-self: flex-start;
+            border: none;
         }
 
         /* Spacer between hero and material sections */
@@ -214,12 +754,19 @@
             font-size: 19px;
             font-weight: 700;
             border-radius: 28.63px;
+            border: 1px solid transparent;
             display: inline-block;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
         }
 
         .cta:hover {
-            background-color: #5a5d59;
+            background-color: #E4D3B3;
+        }
+
+        .cta:active {
+            background-color: #FFFFFF;
+            color: #A3A79C;
+            border: 1px solid #A3A79C;
         }
 
         /* Gap Section after Banner 3 */
@@ -238,39 +785,36 @@
 
         .gap-section-wrapper {
             position: relative;
-            width: 827px;
-            height: 725px;
+            width: 1440px;
+            height: 797.5px;
             margin-left: auto;
             margin-right: 40px;
+           padding-left: 80px;
         }
 
         .gap-section-image {
             width: 100%;
             height: 100%;
-            background-color: #D4A574;
             position: relative;
-        }
-
-        .gap-section-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+            background-image: url('Images/Georgie.jpg');
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
         }
 
         .gap-section-text {
             width: 495px;
             height: 164px;
-            background-color: #FFFFFF;
             padding: 20px;
             position: absolute;
-            top: 280.5px;
-            left: -415px;
+            top: 150px;
+           
             z-index: 3;
         }
 
         .gap-section-text p {
             font-family: 'Quicksand', sans-serif;
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 400;
             color: #71746D;
             line-height: 140%;
@@ -331,6 +875,19 @@
                 transform: none;
             }
 
+            .nav-toggle {
+                display: none;
+            }
+
+            .material-sections {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+
+            .material-banner {
+                width: calc(50% - 14px);
+            }
+
             .gap-section {
                 align-items: center;
             }
@@ -351,13 +908,394 @@
                 position: static;
                 width: 100%;
                 left: auto;
-                margin-top: -82px;
+                margin-top: 20px;
                 margin-bottom: 20px;
             }
 
             footer nav ul {
-                flex-direction: column;
-                gap: 15px;
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 20px;
                 text-align: center;
+            }
+
+            .hero-wrapper.subhero {
+                height: 500px;
+            }
+
+            .subhero-header {
+                top: 40%;
+                left: 10%;
+                max-width: 80%;
+            }
+
+            .art-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 24px;
+            }
+
+            .about-top {
+                padding: 20px 40px 0;
+            }
+
+            nav[role="navigation"].side-nav {
+                width: 100%;
+            }
+
+            .about-hero {
+                position: static;
+                margin: 20px 0 0;
+                height: auto;
+                aspect-ratio: 1093 / 573;
+            }
+
+            .about-hero-label {
+                font-size: 32px;
+            }
+
+            .about-bio-text {
+                grid-template-columns: 1fr;
+                width: 100%;
+                max-width: 440px;
+                gap: 24px;
+            }
+
+            .exhibitions-page {
+                min-height: 0;
+            }
+
+            .exhibitions-page nav[role="navigation"] {
+                position: relative;
+                background-color: #FFFFFF;
+            }
+
+            .exhibitions-page {
+                min-height: 0;
+            }
+
+            .exhibitions-list {
+                position: static;
+                padding: 40px;
+                gap: 32px;
+            }
+
+            .exhibitions-upcoming {
+                position: static;
+                display: block;
+                margin: 0 0 20px;
+            }
+
+            .exhibition-item p {
+                font-size: 20px;
+                white-space: normal;
+            }
+
+            .exhibitions-heading {
+                position: static;
+                padding: 0 40px;
+                font-size: 48px;
+            }
+
+            .exhibitions-page {
+                min-height: 0;
+            }
+
+            .exhibition-story {
+                position: relative;
+                width: 100%;
+                height: auto;
+                padding: 30px 20px;
+                margin: 0 0 40px;
+                border-top: 1px solid #E0E0E0;
+            }
+
+            .exhibitions-page > .exhibition-story:first-of-type {
+                margin-top: 0;
+            }
+
+            .story-bg {
+                position: relative;
+                top: auto;
+                left: auto;
+                width: 100%;
+                height: auto;
+                margin-bottom: 16px;
+            }
+
+            .story-thumb {
+                position: relative;
+                top: auto;
+                left: auto;
+                display: inline-block;
+                width: calc(50% - 8px);
+                height: auto;
+                margin: 0 8px 16px 0;
+            }
+
+            .story-title,
+            .story-text {
+                position: relative;
+                top: auto;
+                left: auto;
+                width: 100%;
+                margin-bottom: 16px;
+            }
+        }
+
+        @media (max-width: 425px) {
+            body {
+                font-size: 15px;
+            }
+
+            .art-modal-overlay {
+                padding: 16px;
+            }
+
+            .art-modal {
+                border-radius: 24px;
+                padding: 50px 24px 40px;
+                gap: 30px;
+            }
+
+            .art-modal-images {
+                gap: 0;
+            }
+
+            .art-modal-close {
+                top: 16px;
+                right: 20px;
+            }
+
+            .art-enquire-text h2 {
+                font-size: 32px;
+            }
+
+            .art-enquire-row {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .exhibitions-heading {
+                font-size: 32px;
+                padding: 0 20px;
+            }
+
+            .exhibition-story {
+                padding: 24px 20px;
+            }
+
+            nav[role="navigation"] {
+                position: absolute;
+                top: 24px;
+                left: 0;
+                padding: 0 20px;
+                display: block;
+                z-index: 10;
+            }
+
+            .nav-container {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                gap: 0;
+            }
+
+            .logo {
+                width: auto;
+                max-width: 80%;
+                height: 50px;
+            }
+
+            .nav-toggle {
+                display: flex;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                right: 20px;
+                width: fit-content;
+                flex-direction: column;
+                flex-wrap: nowrap;
+                justify-content: flex-start;
+                align-items: flex-end;
+                gap: 4px;
+                background-color: rgba(255, 255, 255, 0.75);
+                padding: 10px 14px;
+                z-index: 12;
+            }
+
+            nav[role="navigation"].nav-open .nav-links {
+                display: flex;
+            }
+
+            .nav-links a {
+                font-size: 14px;
+                padding: 4px 0;
+            }
+
+            .hero-wrapper {
+                height: 80vh;
+            }
+
+            .hero-background {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-size: 180%;
+                z-index: 1;
+            }
+
+            .subhero-background {
+                background-size: cover;
+            }
+
+            .material-sections {
+                flex-direction: column;
+                flex-wrap: nowrap;
+            }
+
+            .material-banner {
+                width: 100%;
+            }
+
+            header[role="banner"] {
+                position: absolute;
+                top: 12%;
+                left: 8%;
+                max-width: 45%;
+                padding: 0;
+                margin-top: 0;
+                align-items: flex-start;
+                z-index: 5;
+            }
+
+            h1 {
+                font-size: 24px;
+                line-height: 1.15;
+                text-align: left;
+                margin-bottom: 0;
+                margin-left: 40px;
+            }
+
+            header[role="banner"] > h2 {
+                font-size: 11px;
+                margin-top: 6.6px;
+                text-align: left;
+                margin-left: 40px;
+            }
+
+            .spacer-section {
+                padding: 40px 20px;
+                height: auto;
+            }
+
+            .spacer-section article p {
+                font-size: 13px;
+                max-width: 100%;
+            }
+
+            .material-banner {
+                height: 240px;
+                gap: 20px;
+            }
+
+            .cta {
+                padding: 12px 28px;
+                font-size: 16px;
+            }
+
+            .gap-section {
+                padding: 30px 0 20px;
+                height: auto;
+            }
+
+            .gap-section-wrapper {
+                width: 100%;
+                height: auto;
+                margin: 0 auto;
+            }
+
+            .gap-section-image {
+                height: 520px;
+                min-height: 60vh;
+                background-position: bottom;
+            }
+
+            .gap-section-text {
+                width: calc(100% - 32px);
+                position: static;
+                margin: 20px auto 0;
+                padding: 18px;
+            }
+
+            footer[role="contentinfo"] {
+                padding: 24px 20px;
+            }
+
+            .hero-wrapper.subhero {
+                height: 320px;
+            }
+
+            .subhero-header {
+                top: 40%;
+                left: 8%;
+                max-width: 84%;
+            }
+
+            .subhero-header h1 {
+                margin-bottom: 0;
+            }
+
+            .art-filters {
+                gap: 12px;
+                padding: 30px 20px 0;
+            }
+
+            .filter-pill {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+
+            .art-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                padding: 20px;
+            }
+
+            .about-top {
+                padding: 20px 20px 0;
+            }
+
+            .about-hero-image {
+                border-radius: 24px;
+            }
+
+            .about-hero-label {
+                font-size: 20px;
+                min-width: 100px;
+                border-radius: 12px;
+            }
+
+            .about-bio {
+                padding: 30px 20px;
+            }
+
+            .about-bio-col p {
+                font-size: 14px;
+            }
+
+            .exhibitions-list {
+                padding: 30px 20px 60px;
+                gap: 24px;
+            }
+
+            .exhibition-item p {
+                font-size: 16px;
             }
         }
